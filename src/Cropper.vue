@@ -1173,8 +1173,9 @@ export default {
 			let minimum, maximum;
 			const { aspectRatio, minAspectRatio, maxAspectRatio } = this.stencilProps;
 
-			if (this.$refs.stencil.aspectRatios) {
-				({ minimum, maximum } = this.$refs.stencil.aspectRatios());
+			const stencilRef = this.$refs.stencil
+			if (stencilRef && stencilRef.aspectRatios) {
+				({ minimum, maximum } = stencilRef.aspectRatios());
 			}
 
 			if (isUndefined(minimum)) {
